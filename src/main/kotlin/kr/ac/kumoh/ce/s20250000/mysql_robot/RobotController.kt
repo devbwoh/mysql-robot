@@ -1,5 +1,6 @@
 package kr.ac.kumoh.ce.s20250000.mysql_robot
 
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -13,7 +14,8 @@ class RobotController(val service: RobotService) {
 //    }
 
     @GetMapping
-    fun getAllRobots(): List<Robot> {
-        return service.getAllRobots()
+    fun getAllRobots(): ResponseEntity<List<Robot>> {
+        val robots = service.getAllRobots()
+        return ResponseEntity.ok(robots)
     }
 }
