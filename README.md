@@ -30,3 +30,6 @@ erDiagram
         VARCHAR ability "특수 능력"
     }
 ```
+
+
+![image](https://github.com/user-attachments/assets/621c79a3-2c25-403f-9ca6-e817988d02d8)
