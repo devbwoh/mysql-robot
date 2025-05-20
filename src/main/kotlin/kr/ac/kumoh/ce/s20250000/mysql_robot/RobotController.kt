@@ -1,0 +1,19 @@
+package kr.ac.kumoh.ce.s20250000.mysql_robot
+
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+@RequestMapping("/api/robots")
+class RobotController(val service: RobotService) {
+//    @GetMapping("/")
+//    fun welcome(): String {
+//        return "Welcome to Robot Server"
+//    }
+
+    @GetMapping
+    fun getAllRobots(): List<Robot> {
+        return service.getAllRobots()
+    }
+}
