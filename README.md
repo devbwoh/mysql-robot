@@ -2,6 +2,7 @@
 
 https://nano5.notion.site/Spring-Data-JPA-MySQL-1abdaf211d42817581b9e3dd2ed9d21f?pvs=4
 
+```mermaid
 erDiagram
     mechanic ||--o{ equipment : "장착"
     weapon ||--o{ equipment : "장착"
@@ -28,3 +29,4 @@ erDiagram
         INT damage "피해량"
         VARCHAR ability "특수 능력"
     }
+```
