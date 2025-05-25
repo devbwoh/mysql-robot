@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository
 interface RobotRepository : JpaRepository<Robot, Int> {
     @Query("""
         SELECT new kr.ac.kumoh.ce.s20250000.mysql_robot.EquipmentDto(
-            m.name as robotName,
-            m.model,
-            m.robotClass,
+            r.name as robotName,
+            r.model,
+            r.robotClass,
             e.location,
             e.quantity,
             w.name as weaponName,
@@ -18,10 +18,10 @@ interface RobotRepository : JpaRepository<Robot, Int> {
             w.damage,
             w.ability
         )
-        FROM Robot m
-        LEFT JOIN Equipment e ON m.id = e.mechanicId
+        FROM Robot r
+        LEFT JOIN Equipment e ON r.id = e.mechanicId
         LEFT JOIN Weapon w ON e.weaponId = w.id
-        ORDER BY m.name, e.location
+        ORDER BY r.name DESC, e.location
     """)
     fun findAllEquipment(): List<EquipmentDto>
 }
